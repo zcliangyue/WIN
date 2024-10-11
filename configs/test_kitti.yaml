@@ -1,0 +1,31 @@
+# directory
+root_dir: '/data/program'
+data_dir: '/root/zhangcl/kitti-range'
+
+# trainer
+batch_size: 1
+num_workers: 6
+max_epochs: 400
+monitor: 'val/mae'
+
+# model
+model: 'WIN'
+drop_rate: 0.25
+use_xyz: False
+
+# checkpoints
+#ckpt_path: '/root/zhangcl/WIN/trained/Kitti/tulip_16_64_single.ckpt' # TULIP
+ckpt_path: '/root/zhangcl/WIN/trained/Kitti/win_16_64_single.ckpt' # WIN
+#ckpt_path: '/root/zhangcl/WIN/trained/Kitti/liif_16_64_single.ckpt' # LIIF
+#ckpt_path: '/root/zhangcl/WIN/trained/Kitti/lsr_16_64_single.ckpt' # lsr
+#ckpt_path: '/root/zhangcl/WIN/trained/Kitti/iln_16_64_single.ckpt' # ILN
+
+# dataset
+status: 'test'
+dataset: 'Kitti'
+up_factor: [4, 1]
+res_in: '16_1024'
+res_out: '64_1024'
+down_sample: True
+cuda_index: [0]
+

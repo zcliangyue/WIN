@@ -1,0 +1,32 @@
+# To train on the multiple scaling factor, one should set down_sample as false and res_in as '16_1024'. 
+
+# directory
+data_dir: '/root/public/Carla-ILN'
+train_sceneIDs: ['Town01', 'Town02', 'Town03', 'Town04', 'Town05', 'Town06']
+test_sceneIDs: ['Town07', 'Town10HD']
+
+# trainer
+batch_size: 3
+num_workers: 6
+learning_rate: 0.0001
+max_epochs: 400
+monitor: 'val/mae'
+
+# model
+model: 'WIN'
+drop_rate: 0.25
+use_xyz: False
+# ckpt_path: '/root/zhangcl/lidar_upsampling/src/train_model_logs/lightning_logs/version_67/checkpoints/epoch=88-step=460575.ckpt'
+
+
+# dataset
+status: 'train'
+dataset: 'Carla'
+up_factor: [4, 1]
+res_in: '32_2048'
+res_out: '128_2048'
+train_val_split: [0.75, 0.25]
+down_sample: True 
+cuda_index: [0]
+
+

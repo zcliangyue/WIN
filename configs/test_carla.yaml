@@ -1,0 +1,32 @@
+# directory
+root_dir: '/data/program'
+data_dir: '/root/public/Carla-ILN'
+train_sceneIDs: ['Town01', 'Town02', 'Town03', 'Town04', 'Town05', 'Town06']
+test_sceneIDs: ['Town07', 'Town10HD']
+
+# trainer
+batch_size: 1
+num_workers: 6
+max_epochs: 400
+monitor: 'val/mae'
+
+# model
+model: 'WIN'
+drop_rate: 0.25
+use_xyz: False
+
+# checkpoints
+#ckpt_path: '/root/zhangcl/WIN/trained/Carla/win_32_128_single.ckpt' #WIN 32-128 downsample
+#ckpt_path: '/root/zhangcl/WIN/trained/Carla/iln_32_128_single.ckpt' #iln 
+ckpt_path: '/root/zhangcl/WIN/trained/Carla/win_16_128_multiple.ckpt' #WIN 16-128
+
+
+# dataset
+status: 'test'
+dataset: 'Carla'
+up_factor: [8, 2]
+res_in: '16_1024'
+res_out: '128_2048'
+down_sample: False
+cuda_index: [0]
+

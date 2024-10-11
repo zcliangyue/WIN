@@ -1,0 +1,28 @@
+# directory
+root_dir: '/data/program'
+data_dir: '/root/zhangcl/kitti-range'
+
+
+# trainer
+batch_size: 3
+num_workers: 6
+learning_rate: 0.0001
+max_epochs: 400
+monitor: 'val/mae'
+
+# model
+model: 'my_model2'
+drop_rate: 0.25
+use_xyz: False
+# ckpt_path: ''
+
+# dataset
+mode: 'train'
+dataset: 'Kitti'
+up_factor: [4, 1]
+res_in: '16_1024'
+res_out: '64_1024'
+train_val_split: [0.75, 0.25]
+down_sample: True
+cuda_index: [0]
+
