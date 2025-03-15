@@ -14,7 +14,8 @@ LiDAR upsampling aims to increase the resolution of sparse point sets obtained f
 
 <img src="figures\effect.png" alt="effect" width="50%" />
 
-<div>
+</div>
+
 
 # Overall Framework
 
