@@ -49,7 +49,7 @@ python test.py --config configs/test_carla.yaml
 
 Training and testing on KITTI dataset:
 
-```
+```python
 python train.py --config configs/train_kitti.yaml
 python test.py --config configs/test_kitti.yaml
 ```
