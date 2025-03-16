@@ -8,20 +8,15 @@ from pytorch_lightning.callbacks import ModelCheckpoint
 from data.dataset import generate_dataset
 from data.data_utils import *
 from model.models import WIN
+import argparse
 
 
-
-def test():
+def test(args):
     pl.seed_everything(1234)
-
-    '''Testing models.
-    - test on carla: test_carla.yaml
-    - test on kitti: test_kitti.yaml
-    '''
     
     # choose the config for different datasets
 
-    with open('./configs/test_kitti.yaml', 'r') as f:
+    with open(args.config, 'r') as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
 
     device = torch.device('cuda', config['cuda_index'][0])
@@ -37,7 +32,7 @@ def test():
                                   batch_size=config['batch_size'], 
                                   num_workers=config['num_workers'],
                                   collate_fn=collate_fn_range_image,
-                                  shuffle=True,
+                                  shuffle=False,
                                   pin_memory=True)
 
     # testing
@@ -50,10 +45,12 @@ def test():
                          logger=TensorBoardLogger('test_model_logs'),
                          enable_checkpointing=True,
                          callbacks=[checkpointcallback],
-                         fast_dev_run=False,
-                         profiler='simple')
+                         fast_dev_run=False)
 
     trainer.test(model=model, dataloaders=dataloader_test, ckpt_path=config['ckpt_path'])
 
 if __name__ == '__main__':
-    test()
+    parser = argparse.ArgumentParser(description='Configuration')
+    parser.add_argument('--config', default='./configs/test_carla.yaml', help='config for testing')
+    args = parser.parse_args()
+    test(args)
