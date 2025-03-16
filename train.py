@@ -9,17 +9,13 @@ from pytorch_lightning.callbacks import ModelCheckpoint
 from data.dataset import generate_dataset
 from data.data_utils import *
 from model.models import WIN
+import argparse
 
-def train():
+def train(args):
     pl.seed_everything(1234)
 
-    '''Training models.
-    - train on carla: train_carla.yaml
-    - train on kitti: train_kitti.yaml
-    '''
-
     # choose the config for different datasets
-    with open('./configs/train_carla.yaml', 'r') as f:
+    with open(args.config, 'r') as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
 
     device = torch.device('cuda', config['cuda_index'][0])
@@ -77,4 +73,7 @@ def train():
                      val_dataloaders=dataloader_val)
 
 if __name__ == '__main__':
-    train()
+    parser = argparse.ArgumentParser(description='Configuration')
+    parser.add_argument('--config', default='configs/train_kitti.yaml', help='config for training')
+    args = parser.parse_args()
+    train(args)
