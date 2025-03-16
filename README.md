@@ -56,4 +56,4 @@ python test.py --config configs/test_kitti.yaml
 
 ## Checkpoints
 
-We will release the checkpoints soon.
+Download checkpoint from the [link](https://pan.baidu.com/s/1xnC8J1rXzZPp-45DvOuvbg?pwd=49nf).
