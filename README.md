@@ -36,7 +36,7 @@ pip install -r requirments.txt
 Our experiments include both synthetic and real-world datasets:
 
 - **Synthetic datasets**: we use a virtual dataset built with [CARLA](https://carla.org/) simulator, following the settings of TULIP and ILN. The synthetic data consists of noise-free point clouds with a vertical FoV of 30$`^\circ`$ and three resolutions: 64$`\times`$1024, 128$`\times`$2048, and 256$`\times`$4096. This dataset can be downloaded from the [link](https://sgvr.kaist.ac.kr/~yskwon/papers/icra22-iln/carla.zip).
-- **Real-world dataset**: We use the [KITTI](https://www.cvlibs.net/datasets/kitti/) dataset, collected with a Velodyne HDL-64E LiDAR, featuring a vertical FoV of 26.8$`^\circ`$. To generate ground truth range images, we transformed the raw point clouds into range images with a resolution of 64$`\times`$1024. For testing, we sampled frames uniformly from sequences of 2011_10_03, while the remained sequences are used for training. This result in a (18,336/2,804) train/test split. 
+- **Real-world dataset**: We use the [KITTI](https://www.cvlibs.net/datasets/kitti/) dataset, collected with a Velodyne HDL-64E LiDAR, featuring a vertical FoV of 26.8$`^\circ`$. To generate ground truth range images, we transformed the raw point clouds into range images with a resolution of 64$`\times`$1024. For testing, we sampled frames uniformly from sequences of 2011_10_03, while the remained sequences are used for training. This result in a (18,336/2,804) train/test split. This dataset can be downloaded [here](https://pan.baidu.com/s/1VVhBuUxG-TUKj4Ic_fU3Lw?pwd=9s92).
 
 # Training and Testing
 
