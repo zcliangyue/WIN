@@ -26,8 +26,8 @@ LiDAR upsampling aims to increase the resolution of sparse point sets obtained f
 ```cmd
 conda create -n win python=3.8
 conda activate win
-pip install torch==1.9.1+cu111 torchvision==0.10.1+cu111 torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html
 pip install pytorch-lightning==1.6.0 
+pip install torch==1.9.1+cu111 torchvision==0.10.1+cu111 torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html
 pip install -r requirments.txt
 ```
 Before installing `pytorch-lightning==1.6.0`, Please downgrade pip to 24.0 by `pip install pip==24.0`.
