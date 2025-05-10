@@ -3,4 +3,6 @@ numpy
 PyYAML
 setuptools
 timm
+ninja
+six
 torchmetrics==1.2.0
